@@ -1,0 +1,28 @@
+ .doc {
+    color: white;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 60px;
+}
+
+.doc a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.doc ul {
+    list-style-type:none;
+}
+
+@media (max-width: 600px) {
+    .doc {
+        padding: 30px 10%; /* Mais largo para telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .doc {
+        padding: 20px 5%; /* Bem confortável no celular */
+    }
+}

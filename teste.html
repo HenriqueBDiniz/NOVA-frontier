@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Vagas</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="headerStyle.css">
+    <link rel="stylesheet" href="footerStyle.css">
+    <link rel="stylesheet" href="homeStyle.css">
+</head>
+<body>
+
+    <div id="carreiras">
+        <h2>Vagas Disponíveis</h2>
+        <select id="vagas">
+            <option value="" disabled selected>Selecione...</option>
+            <option value="engenheiro chefe">Engenheiro chefe</option>
+            <option value="tecnico">Técnico de fusão nuclear</option>
+            <option value="piloto">Piloro especializado</option>
+            <option value="rh">Recursos Humanos</option>
+        </select>
+        <button id="prxbtn">Próximo</button>
+    </div>
+
+    <div id="dados">
+        <h2>Informações Pessoais</h2>
+        <form id="form">
+            <label>Nome</label>
+            <input type="text" id="nome" required>
+
+            <label>Sobrenome</label>
+            <input type="text" id="sobrenome" required>
+
+            <label>Data de nascimento</label>
+            <input type="date" id="data" required>
+
+            <label>País</label>
+            <select id="pais" disabled required>
+                <option>Carregando países...</option>
+            </select>
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Senha</label>
+            <input type="password" id="senha" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="confir" id="confir">
+        <h1>Parabéns! 🎉</h1>
+        <p>Entraremos em contato em breve.</p>
+    </div>
+
+    <script>
+        
+    </script>
+
+</body>
+</html>

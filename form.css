@@ -1,0 +1,124 @@
+/*==================== GLOBAL ====================*/
+body {
+    font-family: Arial, sans-serif;
+    background: #121212; /* fundo escuro */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*==================== ETAPAS ====================*/
+#carreiras, #dados, .confir {
+    background: #1e1e1e; /* fundo dos blocos */
+    padding: 40px 30%;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+
+    /* FADE SUAVE */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* ESCONDER ETAPAS POR PADRÃO */
+#dados, .confir {
+    display: none;
+    opacity: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+}
+
+form input, form select {
+    width: 100%;
+    max-width: 250px;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #2c2c2c;
+    color: white;
+}
+
+/*==================== BOTÕES ====================*/
+button {
+    margin-top: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    border: none;
+    background: #000000;
+    color: white;
+    border-radius: 4px;
+    transition: background 0.3s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover { 
+    background: #003d99; 
+}
+
+/*==================== CONFIRMAÇÃO ====================*/
+.confir {
+    position: relative; /* necessário pra posicionar a lua */
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* imagem de fundo da lua */
+.img-lua {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px; /* ajuste o tamanho se quiser */
+    opacity: 0.3; /* suave */
+    pointer-events: none;
+    z-index: 0;
+}
+
+.bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/*==================== SELETORES ====================*/
+#carreiras select, #dados select {
+    width: 100%;
+    max-width: 250px;
+}
+
+/*==================== RESPONSIVO ====================*/
+@media (max-width: 600px) {
+    #carreiras, #dados, .confir {
+        padding: 30px 10%;
+    }
+}
+
+@media (max-width: 480px) {
+    #carreiras, #dados, .confir {
+        padding: 20px 5%;
+    }
+}
