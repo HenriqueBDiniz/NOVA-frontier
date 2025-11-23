@@ -1,35 +1,34 @@
 /*==================== HEADER ====================*/
 header {
-    transition: top 0.1s ease-in-out; 
-    position: fixed;                 
-    top: 0;                          
+    transition: top 0.1s ease-in-out;
+    position: fixed;
+    top: 0;
     width: 100%;
     z-index: 999;
-             
+    background: transparent;
 }
 
-header.hide { top: -120px; }         
+/* quando o header precisa esconder/mostrar */
+header.hide { top: -120px; }
 header.show { top: 0; }
 
 /*==================== NAV ====================*/
 #top {
     display: flex;
     align-items: center;
-    padding: 0 20px;
     justify-content: space-between;
+    padding: 0 20px;
 }
 
 /*==================== LOGO ====================*/
 #top img {
     height: 80px;
     width: auto;
+    transition: 0.2s ease;
 }
-
-/*==================== MAIN ====================*/
-main {
-    padding-top: 120px; 
+.mobile-main{
+    display: none;
 }
-
 /*==================== MENU ====================*/
 .menu-nav {
     display: flex;
@@ -68,8 +67,9 @@ ul.menu-items a {
     width: 180px;
     margin: 0;
     padding: 0;
-    z-index: 1000;
     list-style: none;
+    z-index: 2000;
+    background: black;
 }
 
 .dropdown li a {
@@ -102,13 +102,13 @@ ul.menu-items a {
     padding: 20px;
     cursor: pointer;
     display: none;
+    z-index: 3000;
 }
 
 .menu-btn::before {
     content: "☰";
     font-size: 30px;
     color: white;
-    z-index: 2000;
 }
 
 #menu-toggle:checked + .menu-btn::before {
@@ -117,7 +117,12 @@ ul.menu-items a {
 
 /*==================== MOBILE ====================*/
 @media (max-width: 600px) {
-    /* botão do menu */
+
+    .mobile-main {
+        display: none;
+    }
+
+    /* botão aparece */
     .menu-btn {
         display: block;
         position: absolute;
@@ -125,37 +130,35 @@ ul.menu-items a {
         right: 20px;
     }
 
-    /* menu mobile */
+    /* menu inteiro */
     ul.menu-items {
         position: fixed;
-        top: 85px;
+        top: 0px;
         left: 0;
         width: 100%;
-        height: calc(100% - 85px);
+        height: 100%;
         background: #000;
         flex-direction: column;
         display: none;
         padding: 20px;
         gap: 10px;
-        z-index: 2000;
-        overflow-y: auto; /* rolagem se necessário */
+        z-index: 1500;
     }
 
+   #menu-toggle:checked ~ ul.menu-items .mobile-main {
+        display: block;
+    }
+    /* quando aberto */
     #menu-toggle:checked ~ ul.menu-items {
         display: flex;
-    }
-
-    ul.menu-items li {
-        text-align: left;
-        display: block;
     }
 
     /* dropdown mobile */
     .has-dropdown .dropdown {
         position: static;
-        width: 100%;
         display: none;
         flex-direction: column;
+        background: #000;
     }
 
     .has-dropdown.open .dropdown {
@@ -164,6 +167,15 @@ ul.menu-items a {
 
     .has-dropdown:hover .arrow {
         transform: none;
-        padding-bottom: 5px;
     }
+
+    /* LOGO FIXA quando o menu está aberto */
+    #menu-toggle:checked ~ .menu-btn,
+    #menu-toggle:checked ~ ul.menu-items,
+    #menu-toggle:checked ~ .menu-btn {
+        position: fixed;
+        top: 0px;
+    }
+
 }
+
