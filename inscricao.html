@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Vagas</title>
+    
+</head>
+<body>
+<header id="top">
+    <div class="logo">
+        <a href="home.html"><img src="media/nova.png" alt="Logo"></a>
+    </div>
+
+    <nav class="menu-nav">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-btn"></label>
+
+        <div class="overlay"></div>
+
+        <ul class="menu-items">
+            <li class="has-dropdown">
+                COLONIAS<span class="arrow">▾</span>
+                <ul class="dropdown">
+                    <li><a href="cygnusx-1.html">CYGNUS X-1</a></li>
+                    <li><a href="xanadu.html">XANADU</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                NAVES<span class="arrow">▾</span>
+                <ul class="dropdown">
+                    <li><a href="odysseyone.html">ODYSSEY ONE</a></li>
+                    <li><a href="kublaikhan.html">KUBLAI KHAN</a></li>
+                </ul>
+            </li>
+
+            <li class="has-dropdown">
+                COMPANHIA<span class="arrow">▾</span>
+                <ul class="dropdown">
+                    <li><a href="sobre.html">SOBRE</a></li>
+                    <li><a href="carreira.html">CARREIRA</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- ETAPA 1: VAGAS -->
+    <div id="carreiras" style="display: block;">
+        <h2>Vagas Disponíveis</h2>
+        <select id="vagas" class="pointer">
+            <option value="" disabled selected>Selecione...</option>
+            <option value="engenheiro chefe">Engenheiro chefe</option>
+            <option value="tecnico">Técnico de fusão nuclear</option>
+            <option value="piloto">Piloto especializado</option>
+            <option value="rh">Recursos Humanos</option>
+        </select>
+        <button class="form-btn" id="prxbtn">Próximo</button>
+    </div>
+
+    <!-- ETAPA 2: DADOS PESSOAIS -->
+    <div id="dados" style="display: none; opacity: 0;">
+        <h2>Informações Pessoais</h2>
+        <form id="form">
+            <label>Nome</label>
+            <input type="text" id="nome" required>
+            
+            <label>Sobrenome</label>
+            <input type="text" id="sobrenome" required>
+
+            <label>Email</label>
+            <input type="email" id="email" required>
+
+            <label>Senha</label>
+            <input type="password" id="senha" required>
+
+            <label>Data de nascimento</label>
+            <input type="date" id="data" class="pointer" required>
+
+            <label>Curriculo</label>
+            <input type="file" id="real-file" hidden="hidden">
+            <button type="button" class="form-btn" id="custom-botton">ENVIAR ARQUIVO</button>
+            <span id="custom-text">nenhum arquivo escolhido</span>
+
+            <button class="form-btn" type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <!-- CONFIRMAÇÃO -->
+    <div class="confir" id="confir" style="display: none; opacity: 0;">
+        <h1>Seus dados foram armazenados</h1>
+        <p>Entraremos em contato em breve.</p>
+    </div>
+
+    <div class="img-lua">
+        <img src="/media/lua.jpg" class="bg-img">
+    </div>
+</main>
+
+<footer class="footer">
+    <ul>
+        <li><a href="carreira.html">CARREIRA</a></li>
+        <li><a href="politicadeprivacidade.html">POLITICA DE PRIVACIDADE</a></li>
+    </ul>
+    <p>© NOVA FRONTIER Inc. <br>2001 - 2112</p>
+</footer>
+
+<!-- JS -->
+<script src="formScript.js"></script>
+<script src="scritpt.js"></script>
+</body>
+</html>

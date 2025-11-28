@@ -1,0 +1,135 @@
+/*==================== HEADER ====================*/
+header {
+    transition: top 0.1s ease-in-out; /* animação suave */
+    position: fixed;                 /* fixa no topo */
+    top: 0;                          /* posição inicial */
+    width: 100%;
+    z-index: 999;
+
+}
+
+header.hide { top: -120px; }         /* altura do header */
+header.show { top: 0; }
+
+/*==================== NAV ====================*/
+#top {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/*==================== LOGO ====================*/
+#top img {
+    height: 80px;
+    width: auto;
+}
+
+/*==================== MAIN ====================*/
+main {
+    padding-top: 120px; /* espaço pro header */
+}
+
+/*==================== MENU ====================*/
+.menu-nav { display: flex; width: 100%; }
+.menu-items { padding: 10px; color: white; }
+
+ul.menu-items {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+}
+
+ul.menu-items a { text-decoration: none; color: white; }
+
+.has-dropdown { position: relative; cursor: pointer; }
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 10px 0;
+    color: white;
+}
+
+.has-dropdown:hover .dropdown { display: flex; }
+
+/* seta */
+.arrow { display: inline-block; transition: 0.3s; }
+.has-dropdown:hover .arrow { transform: rotate(180deg); }
+
+/*==================== BOTÃO MOBILE ====================*/
+#menu-toggle { display: none; }
+
+.menu-btn {
+    margin-left: auto;
+    padding: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn::before {
+    content: "☰";
+    font-size: 30px;
+    color: white;
+    z-index: 2000;
+}
+
+#menu-toggle:checked + .menu-btn::before { content: "✖"; }
+
+/*==================== MOBILE ====================*/
+@media (max-width: 600px) {
+    /* botão do menu */
+    .menu-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    /* menu mobile */
+    ul.menu-items {
+        position: fixed;
+        top: 85px;
+        left: 0;
+        width: 100%;
+        height: calc(100% - 85px);
+        background: #000;
+        flex-direction: column;
+        display: none;
+        padding: 20px;
+        gap: 10px;
+        z-index: 2000;
+    }
+
+    #menu-toggle:checked ~ ul.menu-items { display: flex; }
+
+    ul.menu-items li {
+        text-align: left;
+        display: block;
+    }
+
+    /* dropdown mobile */
+    .has-dropdown .dropdown {
+        position: static;
+        width: 100%;
+        display: none;
+        flex-direction: column;
+ 
+    }
+
+    .has-dropdown.open .dropdown { display: flex; }
+
+    .has-dropdown:hover .arrow { transform: none; padding-bottom: 5px; }
+}

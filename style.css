@@ -1,0 +1,223 @@
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+/*==================== HEADER ====================*/
+
+header {
+    transition: top 0.1s ease-in-out;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background: transparent;
+}
+
+/* ============ Esconder o cabeçalho ============= */
+
+header.hide { top: -120px; }
+header.show { top: 0; }
+
+/*==================== NAV ====================*/
+#top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 0px;
+}
+
+/*==================== LOGO ====================*/
+#top img {
+    height: 80px;
+    width: auto;
+    transition: 0.2s ease;
+}
+.mobile-main{
+    display: none;
+}
+/*==================== MENU ====================*/
+.menu-nav {
+    display: flex;
+    width: 100%;
+}
+
+ul.menu-items {
+    color: white;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    gap: 20px;
+}
+
+ul.menu-items a {
+    text-decoration: none;
+    color: white;
+}
+
+.has-dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown {
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 100%;
+    left: -5px;
+    display: none;
+    flex-direction: column;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 2000;
+}
+
+
+.dropdown li a {
+    display: block;
+    color: white;
+    padding: 8px 5px;
+}
+
+.has-dropdown:hover .dropdown {
+    display: flex;
+}
+
+/* seta */
+.arrow {
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.has-dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/*==================== RODA-PÉ ====================*/
+
+.footer {
+    width: 100%;
+    color: white;
+}
+
+.footer ul {
+    font-size: 1.2em;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1em;    
+}
+.footer a {
+    color: white;
+    text-decoration: none;
+
+}
+.footer p {
+    text-align: center;
+}
+
+/*==================== BOTÃO MOBILE ====================*/
+
+#menu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    margin-left: auto;
+    padding-top: 10px;
+    padding-right: 40px;
+    cursor: pointer;
+    display: none;
+    z-index: 3000;
+}
+
+.menu-btn::before {
+    content: "☰";
+    font-size: 35px;
+    color: white;
+}
+
+#menu-toggle:checked + .menu-btn::before {
+    content: "✖";
+}
+
+/*==================== MOBILE ====================*/
+@media (max-width: 600px) {
+
+    .mobile-main {
+        display: none;
+    }
+
+    /* botão aparece */
+    .menu-btn {
+        display: block;
+        position: absolute;
+        top: 7px;
+        right: 20px;
+    }
+    
+    /* menu inteiro */
+    ul.menu-items {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        flex-direction: column;
+        display: none;
+        z-index: 1500;
+    }
+
+   #menu-toggle:checked ~ ul.menu-items .mobile-main {
+        display: block;
+    }
+    /* quando aberto */
+    #menu-toggle:checked ~ ul.menu-items {
+        display: flex;
+    }
+
+    /* dropdown mobile */
+    .has-dropdown .dropdown {
+        position: static;
+        display: none;
+        flex-direction: column;
+
+    }
+
+    .has-dropdown.open .dropdown {
+        display: flex;
+    }
+
+    .has-dropdown:hover .arrow {
+        transform: rotate(180deg)one;
+    }
+
+
+    #menu-toggle:checked ~ .menu-btn {
+        padding-top: 20px;
+        padding-right: 0px;
+        position: fixed;
+        top: 0px;
+    }
+
+    #menu-toggle:checked ~ ul.menu-items {
+        top: 0px;
+        padding-top: 0px;
+        padding-left: 20px;
+        position: fixed;
+
+    }
+}

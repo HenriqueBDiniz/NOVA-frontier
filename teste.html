@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Vagas</title>
+
+    <style media="screen">
+        custom-botton {
+            font-size: 16px;
+            padding: 10px;
+            background-color: #009578;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #custom-botton:hover {
+            background-color: #007a63;
+        }
+
+        #custom-text {
+            margin-left: 10px;
+            font-family: sans-serif;
+            font-size: 16px;
+            color: #aaa;
+        }
+        
+    </style>
+</head>
+<body>
+    <label>País</label>
+            <select id="pais" class="pointer" disabled required>
+                <option>Carregando países...</option>
+            </select>
+            
+    <input type="file" id="real-file" hidden="hidden">
+    <button type="button" id="custom-botton">chose a file</button>
+    <span id="custom-text">no file chosen yet </span>
+
+    <script>
+        const realFileBtn = document.getElementById("real-file");
+        const customBtn = document.getElementById("custom-botton");
+        const customText = document.getElementById("custom-text");
+
+        customBtn.addEventListener("click", function() {
+            realFileBtn.click();
+        });
+
+        realFileBtn.addEventListener("change", function() {
+            if (realFileBtn.value) {
+                customText.innerHTML = realFileBtn.value.match(
+                    /[\/\\]([\w\d\s\.\-\(\)]+)$/
+                )[1];
+            } else {
+                customText.innerHTML = "no file chosen";
+            }
+        });
+    </script>
+
+</body>
+</html>

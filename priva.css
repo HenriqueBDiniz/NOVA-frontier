@@ -1,0 +1,76 @@
+<<<<<<< HEAD
+ .doc {
+    color: white;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 60px;
+}
+
+.doc a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.doc ul {
+    list-style-type:none;
+}
+
+@media (max-width: 600px) {
+    .doc {
+        padding: 30px 10%; /* Mais largo para telas pequenas */
+    }
+}
+
+@media (max-width: 480px) {
+    .doc {
+        padding: 20px 5%; /* Bem confortável no celular */
+    }
+=======
+ .doc {
+    color: white;
+    pointer-events: 500px;
+    padding-top: 100px;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-bottom: 60px;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    text-align: justify;
+}
+.doc a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.doc ul {
+    list-style-type:none;
+}
+
+@media (max-width: 600px) {
+    .doc {
+        padding: 15px 10%; /* Mais largo para telas pequenas */
+    }
+}
+
+@media (max-width: 610px) {
+    .doc {
+    pointer-events: 500px;
+    padding-top: 100px;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 60px;
+    }
+>>>>>>> 0d1557b (commit 1)
+}
