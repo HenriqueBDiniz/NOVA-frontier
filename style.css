@@ -72,10 +72,10 @@ ul.menu-items a {
 }
 
 .dropdown {
-    background: rgba(0, 0, 0, 0.9);
+
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -7px;
     display: none;
     flex-direction: column;
     width: 180px;
