@@ -13,7 +13,6 @@ body {
 }
 
 /*==================== HEADER ====================*/
-
 header {
     transition: top 0.1s ease-in-out;
     position: fixed;
@@ -24,7 +23,6 @@ header {
 }
 
 /* ============ Esconder o cabeçalho ============= */
-
 header.hide { top: -120px; }
 header.show { top: 0; }
 
@@ -34,7 +32,7 @@ header.show { top: 0; }
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    gap: 0px;
+    gap: 0;
 }
 
 /*==================== LOGO ====================*/
@@ -43,9 +41,11 @@ header.show { top: 0; }
     width: auto;
     transition: 0.2s ease;
 }
-.mobile-main{
+
+.mobile-main {
     display: none;
 }
+
 /*==================== MENU ====================*/
 .menu-nav {
     display: flex;
@@ -72,10 +72,10 @@ ul.menu-items a {
 }
 
 .dropdown {
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 100%;
-    left: -5px;
+    left: 0;
     display: none;
     flex-direction: column;
     width: 180px;
@@ -84,7 +84,6 @@ ul.menu-items a {
     list-style: none;
     z-index: 2000;
 }
-
 
 .dropdown li a {
     display: block;
@@ -107,7 +106,6 @@ ul.menu-items a {
 }
 
 /*==================== RODA-PÉ ====================*/
-
 .footer {
     width: 100%;
     color: white;
@@ -120,17 +118,17 @@ ul.menu-items a {
     justify-content: center;
     gap: 1em;    
 }
+
 .footer a {
     color: white;
     text-decoration: none;
-
 }
+
 .footer p {
     text-align: center;
 }
 
 /*==================== BOTÃO MOBILE ====================*/
-
 #menu-toggle {
     display: none;
 }
@@ -157,11 +155,6 @@ ul.menu-items a {
 /*==================== MOBILE ====================*/
 @media (max-width: 600px) {
 
-    .mobile-main {
-        display: none;
-    }
-
-    /* botão aparece */
     .menu-btn {
         display: block;
         position: absolute;
@@ -169,24 +162,30 @@ ul.menu-items a {
         right: 20px;
     }
     
-    /* menu inteiro */
     ul.menu-items {
         position: fixed;
         left: 0;
+        top: 0;
         width: 100%;
         height: 100%;
         background: #000;
         flex-direction: column;
         display: none;
         z-index: 1500;
+        padding-top: 20px;
+        padding-left: 20px;
     }
 
-   #menu-toggle:checked ~ ul.menu-items .mobile-main {
-        display: block;
-    }
-    /* quando aberto */
     #menu-toggle:checked ~ ul.menu-items {
         display: flex;
+    }
+
+    .mobile-main {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ ul.menu-items .mobile-main {
+        display: block;
     }
 
     /* dropdown mobile */
@@ -194,30 +193,24 @@ ul.menu-items a {
         position: static;
         display: none;
         flex-direction: column;
-
     }
 
     .has-dropdown.open .dropdown {
         display: flex;
     }
 
-    .has-dropdown:hover .arrow {
-        transform: rotate(180deg)one;
+    .has-dropdown .arrow {
+        transition: 0.3s;
     }
 
+    .has-dropdown.open .arrow {
+        transform: rotate(180deg);
+    }
 
     #menu-toggle:checked ~ .menu-btn {
         padding-top: 20px;
-        padding-right: 0px;
+        padding-right: 0;
         position: fixed;
-        top: 0px;
-    }
-
-    #menu-toggle:checked ~ ul.menu-items {
-        top: 0px;
-        padding-top: 0px;
-        padding-left: 20px;
-        position: fixed;
-
+        top: 0;
     }
 }
