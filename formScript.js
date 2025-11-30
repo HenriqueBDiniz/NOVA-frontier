@@ -6,7 +6,6 @@ const confir = document.getElementById("confir");
 const pais = document.getElementById("pais");
 const form = document.getElementById("form");
 
-// 🌍 Carregar países
 fetch("https://countriesnow.space/api/v0.1/countries")
     .then(r => r.json())
     .then(response => {
@@ -20,7 +19,6 @@ fetch("https://countriesnow.space/api/v0.1/countries")
         pais.innerHTML = '<option>Erro ao carregar países</option>';
     });
 
-// ➡️ Botão próxima etapa
 prxbtn.onclick = function () {
     if (!vagas.value) {
         alert("Selecione uma vaga antes de continuar!");
@@ -36,10 +34,16 @@ prxbtn.onclick = function () {
     }, 50);
 };
 
-// 🔒 Validação final
 form.onsubmit = function(e) {
     e.preventDefault();
-
+document.getElementById("data").addEventListener("input", function(e) {
+    let v = e.target.value.replace(/\D/g, "");
+    if (v.length >= 5) {
+        e.target.value = v.replace(/(\d{2})(\d{2})(\d{0,4})/, "$1/$2/$3");
+    } else if (v.length >= 3) {
+        e.target.value = v.replace(/(\d{2})(\d{0,2})/, "$1/$2");
+    }
+});
     const nascimento = new Date(document.getElementById("data").value);
     const hoje = new Date();
     let idade = hoje.getFullYear() - nascimento.getFullYear();
