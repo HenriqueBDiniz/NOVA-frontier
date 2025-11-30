@@ -1,10 +1,10 @@
- .doc {
+.doc {
     color: white;
     pointer-events: 500px;
-    padding-top: 100px;
+    padding-top: 150px;
     padding-left: 30%;
     padding-right: 30%;
-    padding-bottom: 60px;
+    padding-bottom: 120px;
 }
 
 h2 {
@@ -29,18 +29,35 @@ p {
     list-style-type:none;
 }
 
-@media (max-width: 600px) {
-    .doc {
-        padding: 15px 10%; /* Mais largo para telas pequenas */
-    }
-}
-
 @media (max-width: 610px) {
     .doc {
+    justify-content: center;
     pointer-events: 500px;
-    padding-top: 100px;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-bottom: 60px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+    }
+
+    main {
+    flex: 1;
+    padding-bottom: 80px; /* espaço pro footer */
+}   
+
+    .img-lua {
+    width: 100%;
+    height: auto;   
+    margin-top: 50px;
+    margin-bottom: 200px;  
+    }
+
+    .img-lua img {
+    width: 100%;
+    display: block;
+
+    mask-image: 
+    linear-gradient(to top, black 95%, transparent);
+    -webkit-mask-composite: intersect;
+    mask-composite: intersect;
+    
+    z-index: 1;
     }
 }
