@@ -110,6 +110,7 @@ button:hover {
         padding: 200px;
         color: white; 
         z-index: 2; 
+        position: static;
     } 
 }
 

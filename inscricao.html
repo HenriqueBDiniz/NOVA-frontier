@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -10,46 +10,46 @@
 </head>
 <body>
 <header id="top">
-    <div class="logo">
-        <a href="home.html"><img src="media/nova.png" alt="Logo"></a>
-    </div>
+        <div class="logo">
+            <a href="home.html"><img src="media/nova.png"></a>
+        </div>
 
-    <nav class="menu-nav">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-btn"></label>
+        <nav class="menu-nav">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-btn"></label>
 
-        <div class="overlay"></div>
+            <ul class="menu-items">
+                <li class="mobile-main"><a href="home.html"><img src="media/nova.png"></a></li>
+                
+                <li class="has-dropdown">
+                    COLONIAS<span class="arrow">▾</span>
+                    <ul class="dropdown">
+                        <li><a href="cygnusx-1.html">CYGNUS X-1</a></li>
+                        <li><a href="xanadu.html">XANADU</a></li>
+                    </ul>
+                </li>
 
-        <ul class="menu-items">
-            <li class="has-dropdown">
-                COLONIAS<span class="arrow">▾</span>
-                <ul class="dropdown">
-                    <li><a href="cygnusx-1.html">CYGNUS X-1</a></li>
-                    <li><a href="xanadu.html">XANADU</a></li>
-                </ul>
-            </li>
+                <li class="has-dropdown">
+                    NAVES<span class="arrow">▾</span>
+                    <ul class="dropdown">
+                        <li><a href="odysseyone.html">ODYSSEY ONE</a></li>
+                        <li><a href="kublaikhan.html">KUBLAI KHAN</a></li>
+                    </ul>
+                </li>
 
-            <li class="has-dropdown">
-                NAVES<span class="arrow">▾</span>
-                <ul class="dropdown">
-                    <li><a href="odysseyone.html">ODYSSEY ONE</a></li>
-                    <li><a href="kublaikhan.html">KUBLAI KHAN</a></li>
-                </ul>
-            </li>
 
-            <li class="has-dropdown">
-                COMPANHIA<span class="arrow">▾</span>
-                <ul class="dropdown">
-                    <li><a href="sobre.html">SOBRE</a></li>
-                    <li><a href="carreira.html">CARREIRA</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+                <li class="has-dropdown">
+                    COMPANHIA<span class="arrow">▾</span>
+                    <ul class="dropdown">
+                        <li><a href="sobre.html">SOBRE</a></li>
+                        <li><a href="carreira.html">CARREIRA</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>    
 
 <main>
-    <!-- ETAPA 1: VAGAS -->
     <div id="carreiras" style="display: block;">
         <h2>Vagas Disponíveis</h2>
         <select id="vagas" class="pointer">

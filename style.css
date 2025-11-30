@@ -20,11 +20,11 @@ header {
     width: 100%;
     z-index: 999;
 
-    padding-bottom: 0px;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.87) 20%, rgba(0,0,0,0));
 }
 
 /* ============ Esconder o cabeçalho ============= */
+
 header.hide { top: -120px; }
 header.show { top: 0; }
 
@@ -33,12 +33,14 @@ header.show { top: 0; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding-bottom: 100px;
+    
     gap: 0;
 }
 
 /*==================== LOGO ====================*/
 #top img {
+    padding-left: 2em;
     height: 80px;
     width: auto;
     transition: 0.2s ease;
@@ -56,11 +58,12 @@ header.show { top: 0; }
 
 ul.menu-items {
     color: white;
+    font-weight: bold;
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 10px;
-    gap: 20px;
+    padding: 2em;
+    gap: 3em;
 }
 
 ul.menu-items a {
@@ -74,7 +77,6 @@ ul.menu-items a {
 }
 
 .dropdown {
-
     position: absolute;
     top: 100%;
     left: -7px;
@@ -138,7 +140,7 @@ ul.menu-items a {
 .menu-btn {
     margin-left: auto;
     padding-top: 10px;
-    padding-right: 40px;
+    padding-right: 1em;
     cursor: pointer;
     display: none;
     z-index: 3000;
@@ -152,18 +154,19 @@ ul.menu-items a {
 
 #menu-toggle:checked + .menu-btn::before {
     content: "✖";
+    padding: 20px;
 }
 
 /*==================== MOBILE ====================*/
 @media (max-width: 600px) {
-
     .menu-btn {
         display: block;
         position: absolute;
         top: 7px;
         right: 20px;
+        z-index: 2001;
     }
-    
+
     ul.menu-items {
         position: fixed;
         left: 0;
@@ -174,23 +177,13 @@ ul.menu-items a {
         flex-direction: column;
         display: none;
         z-index: 1500;
-        padding-top: 20px;
-        padding-left: 20px;
+
     }
 
     #menu-toggle:checked ~ ul.menu-items {
         display: flex;
     }
 
-    .mobile-main {
-        display: none;
-    }
-
-    #menu-toggle:checked ~ ul.menu-items .mobile-main {
-        display: block;
-    }
-
-    /* dropdown mobile */
     .has-dropdown .dropdown {
         position: static;
         display: none;
@@ -209,10 +202,36 @@ ul.menu-items a {
         transform: rotate(180deg);
     }
 
+    /* MOBILE MAIN (LOGO) */
+    .mobile-main {
+        display: none;
+    }
+
+    #menu-toggle:checked ~ ul.menu-items .mobile-main {
+        display: flex;
+        justify-content: flex-start; 
+        align-items: center;
+
+        position: absolute;  
+        top: 0px;
+        left: 0px;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    #menu-toggle:checked ~ ul.menu-items {
+        padding-top: 120px;
+        padding-left: 40px;
+    }
+
     #menu-toggle:checked ~ .menu-btn {
         padding-top: 20px;
-        padding-right: 0;
+        padding-right: 0%;
+        padding-left: 0%;
+        padding-bottom: 10px;
         position: fixed;
         top: 0;
     }
 }
+
