@@ -2,17 +2,15 @@
 main {
     color: white;
     width: 100%;
-    padding-top: 0px;
     overflow: hidden;
 }
 
 /* ================= TÍTULO COM VÍDEO ================= */
-
 .title-box {
     position: relative;
     width: 100%;
     height: 700px;
-    overflow: hidden;;
+    overflow: hidden;
 }
 
 .title-video {
@@ -31,21 +29,19 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     z-index: 2;
     color: white;
     text-transform: uppercase;
-
     font-size: 3em;
     text-align: center;
 }
 
+/* ================= CYGNUS SECTION ================= */
 .cygnus-box {
-    top: 0;
     position: relative;
     width: 100%;
     height: 100vh;       
-    overflow: hidden;      
+    overflow: hidden;
     margin: 0;
     padding: 0;
 }
@@ -54,49 +50,41 @@ main {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100%;
-    object-fit: cover;     
+    object-fit: cover;
     z-index: 1;
 }
 
 /* ================= SEÇÃO COM IMAGEM DE FUNDO ================= */
+.img-bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
 .img-bg img {
-    padding-bottom: 0px;
-    position: relative;
-    top: 0;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
     object-position: right;
     z-index: 1;
 }
-.img-bg {
-    position: relative;     /* IMPORTANTE */
-    width: 100%;
-    height: 100vh;          /* opcional — deixa altura da tela inteira */
-    overflow: hidden;
-}
+
 .cont {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
     width: 80%;
     max-width: 900px;
-
     color: white;
     font-size: 1.3rem;
     text-align: center;
-
     padding: 30px;
     background: rgba(0, 0, 0, 0.45);
     border-radius: 15px;
-
     z-index: 3;
 }
 
@@ -107,49 +95,62 @@ main {
     padding: 20px;
     border-radius: 10px;
 }
+
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
 
-    .title-box img {
+    .cygnus-box,
+    .mars-box {
+        width: 100%;
+        height: auto !important;
+        position: relative;
+        overflow: visible;
+        padding-top: 100px;
+    }
+
+    .cygnus-box video.cygnusx-1,
+    .mars-box video.title-video {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        background: black !important;
+    }
+
+    .title-box {
         width: 100%;
         height: auto;
-        margin-top: 50px;
-        margin-bottom: 200px;
+        overflow: visible;
+        position: relative;
+    }
+
+    .title-center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3;
+        font-size: 1.8rem;
+        width: 90%;
+        padding: 10px 15px;
+        border-radius: 10px;
     }
 
     .img-bg {
         width: 100%;
         height: auto;
-        margin-top: 50px;
-        margin-bottom: 200px;
-    }
-
-    .title-box h1 {
-        font-size: 50px;
-        color: white;
-        z-index: 2;
+        margin: 0;
+        padding-top: 15%;
         position: static;
-        justify-content: left;
-        padding-bottom: 350px;
     }
 
-    .img-bg { 
-        mask-image: none; 
-        background-size: contain; 
-        margin: 0%; 
-        padding-top: 15%; 
-        position: static; 
-    } 
-
-    .cont { 
-        color: white; 
-        z-index: 2; 
+    .cont {
         position: static;
         padding-top: 350px;
-        justify-content: left;
         padding-left: 50px;
         margin-right: 110px;
         font-size: 17px;
-    } 
+    }
 
     h2 {
         font-size: 20px;
