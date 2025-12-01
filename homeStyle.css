@@ -107,11 +107,24 @@ button:hover {
     .col-content, 
     .nav-content, 
     .job-content { 
-        padding: 200px;
         color: white; 
         z-index: 2; 
         position: static;
+        padding-top: 350px;
+        justify-content: left;
+        padding-left: 50px;
+        margin-right: 110px;
+        font-size: 17px;
     } 
-    
+
+    h2 {
+        font-size: 20px;
+    }
+
+    button {
+        margin-top: 5px;
+        padding: 12px;
+    }
 }
+
 

@@ -1,22 +1,5 @@
-/*==================== GLOBAL ====================*/
-body {
-    font-family: Arial, sans-serif;
-    background: #000000; 
-    color: white;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+main {
+    padding-top: 150px ;
 }
 
 /*==================== ETAPAS ====================*/
@@ -94,6 +77,27 @@ form input, form select {
     background: white;
     color: rgb(0, 0, 0);
     transform: translateY(-2px);
+}
+
+.erro-msg {
+  color: #ff4d4d;
+  font-size: 0.9rem;
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-erro {
+  background-color: #ff3b3b;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
 }
 
 /*==================== CONFIRMAÇÃO ====================*/

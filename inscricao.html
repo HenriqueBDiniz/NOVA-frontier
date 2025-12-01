@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="/media/nova.ico">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="priva.css">
-        <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="content.css">
+    <link rel="shortcut icon" href="/media/nova.ico">
+    <link rel="stylesheet" href="form.css">
     <title>Formulário de Vagas</title>
     
 </head>
@@ -70,15 +70,30 @@
         <form id="form">
             <label>Nome</label>
             <input type="text" id="nome" required>
-            
+                <span class="erro-msg">
+                <span class="icon-erro">!</span>
+                 </span>
+
             <label>Sobrenome</label>
             <input type="text" id="sobrenome" required>
+            <span class="erro-msg">
+                <span class="icon-erro">!</span>
+                </span>
+
 
             <label>Email</label>
             <input type="email" id="email" required>
+            <span class="erro-msg">
+                <span class="icon-erro">!</span>            
+            </span>
+
 
             <label>Senha</label>
             <input type="password" id="senha" required>
+            <span class="erro-msg">
+                <span class="icon-erro">!</span>
+                </span>
+
 
             <label>Data de nascimento</label>
             <input type="date" id="data" class="pointer" placeholder="dd/mm/yyyy" required>
