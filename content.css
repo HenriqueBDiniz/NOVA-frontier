@@ -19,13 +19,13 @@ h1 {
 }
 
 
-dados {
+.dados {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 10;
     display: flex;
     flex-direction: column;
-    gap: 8px; /* espaçamento entre linhas */
+    gap: 8px; 
 }
 
 .dados li {
@@ -114,7 +114,7 @@ dados {
 .cont {
     position: absolute;
     top: 50%;
-    width: 45%;
+    width: 40%;
     padding: 50px;
     text-align: left;
     color: white;
@@ -128,6 +128,11 @@ dados {
     text-decoration: none;
     padding: 20px;
     border-radius: 10px;
+}
+
+.cont h2 {
+    font-size: 2em;
+    text-transform: uppercase;
 }
 
 /* ================= MOBILE ================= */
@@ -178,9 +183,13 @@ dados {
         position: static;
     }
 
+    h1 {
+        padding-bottom:140%;
+    }
+
     .cont {
         position: static;
-        padding-top: 350px;
+        padding-top: 50px;
         padding-left: 50px;
         margin-right: 110px;
         font-size: 17px;
