@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="content.css">
     <link rel="shortcut icon" href="/media/nova.ico">
+    <link rel="stylesheet" href="time.css">
     <title>cygnusx-1</title>
 </head>
 <body>
@@ -65,10 +66,18 @@
 
         <section class="img-bg bloco1">
             <img src="/media/oneill.jpg">
-        <div class="cont">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sed eius itaque accusantium, quis magni enim vel nesciunt sint placeat illo natus aliquam cum error eveniet numquam aut mollitia odit?
-            </p>
+
+        <div class="cont" style="top: 30%; width: 45%;">
+            <h2>visão geral</h2>
+            <ul class="dados">
+                <li><span class="titulo"> MODELO:</span> <span class="valor">Cilíndrico de O’Neill</span></li>
+                <li><span class="titulo"> LOCALIZAÇÃO:</span> <span class="valor">Órbita baixa da Terra</span></li>
+                <li><span class="titulo"> ESTADO:</span> <span class="valor">Em construção</span></li>
+                <li><span class="titulo"> CAPACIDADE HABITACIONAL:</span> <span class="valor">5.000 – 20.000 habitantes</span></li>
+                <li><span class="titulo"> MODULOS PRINCIPAIS:</span> <span class="valor">Habitat, Agricultura Interna, Laboratórios Científicos, Áreas de Lazer, Saúde e Suporte à Vida</span></li>
+                <li><span class="titulo"> FOCO PRINCIPAL:</span> <span class="valor">Testes de tecnologias de suporte à vida, gravidade artificial e expansão de habitats orbitais</span></li>
+                <li><span class="titulo"> OBJETIVO FUTURO:</span> <span class="valor">Primeira de muitas colônias orbitais para expansão humana sustentável no espaço</span></li>
+            </ul>
         </div>
     </section>
 
@@ -76,15 +85,32 @@
             <img src="/media/oneill_ins.jpg">
 
             <div class="cont">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit obcaecati laudantium sed repellat quo autem, suscipit dicta cupiditate recusandae culpa, officiis sit quos omnis, maxime ad dolores doloribus consequatur consectetur.</p>
+                <h2>pioneirismo </h2>
+                <p>A primeira colônia espacial baseada no modelo cilíndrico de O’Neill está em construção para orbitar a Terra, servindo como protótipo para uma futura frota de habitats orbitais. Projetada com dimensões imponentes e rotação controlada para gerar gravidade artificial, a colônia contará com módulos de habitação, laboratórios científicos, áreas agrícolas internas e infraestrutura de lazer e saúde. Seu objetivo é permitir estadia prolongada de milhares de habitantes, testar tecnologias de suporte à vida em microgravidade e servir como plataforma de lançamento e pesquisa para futuras colônias orbitais, marcando o início de uma era de expansão humana sustentável no espaço.</p>
             </div>
         </section>
 
         <section class="img-bg">
             <img src="/media/oneilmar.jpg">
 
-            <div class="cont">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et fuga, assumenda alias atque quam eveniet consequatur ex, fugit corrupti asperiores eius dolorum? Libero atque deleniti eos, ex commodi reprehenderit natus!</p>
+            <div class="cont" style=" text-align: center; top: 30%; padding-left: 30%;">
+                <div>
+                    <h2 class="mb">tempo até a inauguração</h2>  
+                    <div class="countdown">
+                        <div class="time-segment">
+                            <span id="years">0</span>
+                            <span class="label">Anos</span>
+                        </div>
+                        <div class="time-segment">
+                            <span id="months">0</span>
+                            <span class="label">Meses</span>
+                        </div>
+                        <div class="time-segment">
+                            <span id="days">0</span>
+                            <span class="label">Dias</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -101,5 +127,6 @@
     </footer>
 
     <script src="scritpt.js"></script>
+    <script src="contagem.js"></script>
 </body>
 </html>
